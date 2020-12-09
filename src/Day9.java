@@ -1,12 +1,11 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Day9 {
     public static void main(String[] args) {
         String input = "resources/Day9Input.txt";
         ArrayList<String> data = Utils.txtToArrayList(input);
         ArrayList<Long> dataAsInteger = new ArrayList<>();
+        assert data != null;
         for (String line : data) {
             dataAsInteger.add(Long.parseLong(line));
         }
@@ -41,6 +40,7 @@ public class Day9 {
                     if (nextNumber == dataAsInteger.get(i) + dataAsInteger.get(j)) {
                         //System.out.println(new long[] {i, dataAsInteger.get(i), j, dataAsInteger.get(j), nextNumber});
                         containsSum = true;
+                        break;
                     }
                 }
             }
